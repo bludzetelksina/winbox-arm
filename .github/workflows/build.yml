@@ -1,0 +1,142 @@
+name: Multi-Platform Build
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  release:
+    types: [ published ]
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Qt6
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y qt6-base-dev qt6-base-dev-tools cmake build-essential
+    
+    - name: Build Linux
+      run: |
+        chmod +x scripts/build_linux.sh
+        ./scripts/build_linux.sh
+    
+    - name: Create DEB package
+      run: |
+        chmod +x scripts/package_deb.sh
+        ./scripts/package_deb.sh
+    
+    - name: Upload Linux artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: linux-build
+        path: |
+          build-linux/src/winbox-arm
+          winbox-arm_*.deb
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Qt6
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: '6.5.0'
+        target: 'desktop'
+        arch: 'win64_msvc2019_64'
+    
+    - name: Setup MSVC
+      uses: microsoft/setup-msbuild@v1.1
+    
+    - name: Build Windows
+      run: |
+        mkdir build-windows
+        cd build-windows
+        cmake .. -DCMAKE_BUILD_TYPE=Release -G "Visual Studio 17 2022"
+        cmake --build . --config Release
+    
+    - name: Upload Windows artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: windows-build
+        path: build-windows/src/Release/winbox-arm.exe
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Qt6
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: '6.5.0'
+        target: 'desktop'
+    
+    - name: Build macOS
+      run: |
+        chmod +x scripts/build_macos.sh
+        ./scripts/build_macos.sh
+    
+    - name: Upload macOS artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: macos-build
+        path: build-macos/WinBoxARM.app
+
+  build-arm:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: [aarch64, armv7]
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup cross-compilation
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc-${{ matrix.arch }}-linux-gnu g++-${{ matrix.arch }}-linux-gnu
+    
+    - name: Build ARM
+      run: |
+        mkdir build-${{ matrix.arch }}
+        cd build-${{ matrix.arch }}
+        cmake .. \
+          -DCMAKE_BUILD_TYPE=Release \
+          -DCMAKE_C_COMPILER=${{ matrix.arch }}-linux-gnu-gcc \
+          -DCMAKE_CXX_COMPILER=${{ matrix.arch }}-linux-gnu-g++
+        make -j$(nproc)
+    
+    - name: Upload ARM artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ matrix.arch }}-build
+        path: build-${{ matrix.arch }}/src/winbox-arm
+
+  release:
+    if: github.event_name == 'release'
+    needs: [build-linux, build-windows, build-macos, build-arm]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download all artifacts
+      uses: actions/download-artifact@v4
+    
+    - name: Create release assets
+      run: |
+        # Compress binaries
+        tar -czf winbox-arm-linux-x64.tar.gz -C linux-build winbox-arm
+        zip winbox-arm-windows-x64.zip windows-build/winbox-arm.exe
+        tar -czf winbox-arm-macos-x64.tar.gz -C macos-build WinBoxARM.app
+        tar -czf winbox-arm-linux-aarch64.tar.gz -C aarch64-build winbox-arm
+        tar -czf winbox-arm-linux-armv7.tar.gz -C armv7-build winbox-arm
+    
+    - name: Upload to release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          winbox-arm-*.tar.gz
+          winbox-arm-*.zip
+          linux-build/*.deb
