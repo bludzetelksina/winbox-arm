@@ -1,0 +1,8 @@
+/home/runner/workspace/winbox-arm/build-linux/CMakeFiles/edit_cache.dir
+/home/runner/workspace/winbox-arm/build-linux/CMakeFiles/rebuild_cache.dir
+/home/runner/workspace/winbox-arm/build-linux/src/CMakeFiles/winbox-arm.dir
+/home/runner/workspace/winbox-arm/build-linux/src/CMakeFiles/edit_cache.dir
+/home/runner/workspace/winbox-arm/build-linux/src/CMakeFiles/rebuild_cache.dir
+/home/runner/workspace/winbox-arm/build-linux/src/CMakeFiles/winbox-arm_autogen.dir
+/home/runner/workspace/winbox-arm/build-linux/tests/CMakeFiles/edit_cache.dir
+/home/runner/workspace/winbox-arm/build-linux/tests/CMakeFiles/rebuild_cache.dir

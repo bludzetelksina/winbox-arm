@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=WinBox ARM
+Comment=RouterOS Client for ARM devices
+Exec=winbox-arm
+Icon=winbox-arm
+Categories=Network;

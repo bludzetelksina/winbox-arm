@@ -1,0 +1,124 @@
+{
+	"BUILD_DIR" : "/home/runner/workspace/winbox-arm/build-linux/src/winbox-arm_autogen",
+	"CMAKE_BINARY_DIR" : "/home/runner/workspace/winbox-arm/build-linux",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/runner/workspace/winbox-arm/build-linux/src",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/runner/workspace/winbox-arm/src",
+	"CMAKE_EXECUTABLE" : "/nix/store/rxb9zl1mdx9f2n3z0nyv9zhngj3f2pw0-cmake-3.24.3/bin/cmake",
+	"CMAKE_LIST_FILES" : [ "/home/runner/workspace/winbox-arm/src/CMakeLists.txt" ],
+	"CMAKE_SOURCE_DIR" : "/home/runner/workspace/winbox-arm",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"/home/runner/workspace/winbox-arm/src/protocol/winbox_protocol.h",
+			"MU",
+			"ULO4IMYJZC/moc_winbox_protocol.cpp",
+			null
+		],
+		[
+			"/home/runner/workspace/winbox-arm/src/ui/main_window.h",
+			"MU",
+			"UYX5XTB5RZ/moc_main_window.cpp",
+			null
+		],
+		[
+			"/home/runner/workspace/winbox-arm/src/winbox_client.h",
+			"MU",
+			"EWIEGA46WW/moc_winbox_client.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/runner/workspace/winbox-arm/build-linux/src/winbox-arm_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/runner/workspace/winbox-arm/build-linux/src/winbox-arm_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NETWORK_LIB",
+		"QT_NO_DEBUG",
+		"QT_WIDGETS_LIB"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/runner/workspace/winbox-arm/src/protocol",
+		"/home/runner/workspace/winbox-arm/src/ui",
+		"/home/runner/workspace/winbox-arm/src/utils",
+		"/nix/store/wlgj12rfhsrm5a0mixk2fsjgzcahykzd-qtbase-6.4.1-dev/include/QtWidgets",
+		"/nix/store/wlgj12rfhsrm5a0mixk2fsjgzcahykzd-qtbase-6.4.1-dev/include",
+		"/nix/store/wlgj12rfhsrm5a0mixk2fsjgzcahykzd-qtbase-6.4.1-dev/include/QtCore",
+		"/nix/store/wlgj12rfhsrm5a0mixk2fsjgzcahykzd-qtbase-6.4.1-dev/mkspecs/linux-g++",
+		"/nix/store/wlgj12rfhsrm5a0mixk2fsjgzcahykzd-qtbase-6.4.1-dev/include/QtGui",
+		"/nix/store/wlgj12rfhsrm5a0mixk2fsjgzcahykzd-qtbase-6.4.1-dev/include/QtNetwork",
+		"/nix/store/1fkzzrlsrw8mppvz5cg3fr223kxgwnxx-qt-full-6.4.1/include",
+		"/nix/store/k4za15psddq0sa3kvy794034hk0hb0ag-libglvnd-1.5.0-dev/include",
+		"/nix/store/66vg52x48y0v0qzf4m1sm7jy087qp00y-pulseaudio-16.1-dev/include",
+		"/nix/store/n0r5z0w1j3m0z8980hgg2rjkh617v1md-libcap-2.66-dev/include",
+		"/nix/store/a4mgvch1zx61xfsixq3dmh6r81p4dgkl-attr-2.5.1-dev/include",
+		"/nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/include/c++/11.3.0",
+		"/nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/include/c++/11.3.0/x86_64-unknown-linux-gnu",
+		"/nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/include/c++/11.3.0/backward",
+		"/nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include",
+		"/nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/include",
+		"/nix/store/1gf2flfqnpqbr1b4p4qz2f72y42bs56r-gcc-11.3.0/lib/gcc/x86_64-unknown-linux-gnu/11.3.0/include-fixed",
+		"/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_GADGET_EXPORT",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT"
+	],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/nix/store/dq0xwmsk1g0i2ayg6pb7y87na2knzylh-gcc-wrapper-11.3.0/bin/g++",
+		"-dM",
+		"-E",
+		"-c",
+		"/nix/store/rxb9zl1mdx9f2n3z0nyv9zhngj3f2pw0-cmake-3.24.3/share/cmake-3.24/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/runner/workspace/winbox-arm/build-linux/src/winbox-arm_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 4,
+	"PARSE_CACHE_FILE" : "/home/runner/workspace/winbox-arm/build-linux/src/CMakeFiles/winbox-arm_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/nix/store/wlgj12rfhsrm5a0mixk2fsjgzcahykzd-qtbase-6.4.1-dev/./libexec/moc",
+	"QT_UIC_EXECUTABLE" : "/nix/store/wlgj12rfhsrm5a0mixk2fsjgzcahykzd-qtbase-6.4.1-dev/./libexec/uic",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 4,
+	"SETTINGS_FILE" : "/home/runner/workspace/winbox-arm/build-linux/src/CMakeFiles/winbox-arm_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "/home/runner/workspace/winbox-arm/src/main.cpp", "MU", null ],
+		[
+			"/home/runner/workspace/winbox-arm/src/protocol/winbox_protocol.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/runner/workspace/winbox-arm/src/ui/main_window.cpp",
+			"MU",
+			null
+		],
+		[ "/home/runner/workspace/winbox-arm/src/utils/logger.cpp", "MU", null ],
+		[ "/home/runner/workspace/winbox-arm/src/winbox_client.cpp", "MU", null ]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}
