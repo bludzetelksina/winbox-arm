@@ -1,0 +1,11 @@
+Package: winbox-arm
+Version: 1.0.0
+Section: net
+Priority: optional
+Architecture: amd64
+Depends: libqt6widgets6, libqt6network6, libqt6core6
+Maintainer: WinBox ARM Developer <developer@example.com>
+Description: RouterOS Client for ARM devices
+ WinBox ARM is a lightweight, cross-platform client application 
+ designed to manage MikroTik RouterOS devices from ARM-based systems 
+ like Raspberry Pi and Android devices.
